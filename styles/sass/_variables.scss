@@ -1,0 +1,17 @@
+$primary-color: #fff;
+$primary-accent: #444;
+
+$primary-black: #000;
+$primary-white: #fff;
+
+$translucentBlack: transparentize($primary-black, 0.4);
+
+$font-serif: serif;
+$font-sans-serif: sans-serif;
+
+
+$first-break: 1250px;
+$second-break: 1125px;
+$third-break: 980px;
+$fourth-break: 750px;
+$fifth-break: 400px;
