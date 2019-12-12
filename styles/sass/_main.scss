@@ -1,0 +1,55 @@
+
+h2 {
+  font-size: 3rem;
+}
+.about-me {
+  display: flex;
+  h3,p {
+    font-size: 2.4rem;
+  }
+  .text-highlight {
+    color: $primary-accent;
+  }
+  .profile-text {
+    width: calc(60% - 20px);
+    margin: 10px;
+    padding-top: 60px;
+  }
+  .profile-photo {
+    width: calc(40% - 20px);
+    margin: 10px;
+    position: relative;
+    top: -30px;
+    &::after {
+      content: '';
+      display: block;
+      $offset: 15px;
+      width: calc(100% - #{$offset});
+      height: calc(100% + #{$offset});
+      position: absolute;
+      top: -$offset/2;
+      left: $offset/2;
+      border: 1px solid $primary-accent;
+    }
+  }
+}
+.my-skills {
+  background-color: $primary-color;
+  min-height: 150px;
+  h2 {
+    text-align: center;
+    padding: 20px;
+    color: $primary-black;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  li {
+    width: calc(100%/3 - 20px);
+    height: 50px;
+    margin: 10px;
+    background-color: $primary-accent;
+  }
+}

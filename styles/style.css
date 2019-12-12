@@ -249,6 +249,14 @@ html {
   left: 0;
 }
 
+/*
+accent: #EF414C
+primary: #F3F7F0
+secondary: #19323C
+tertiary: #3F7FA9
+yellow: #F8EC70
+red: #F0575A
+*/
 /* Type Styles - type.scss */
 * {
   font-family: sans-serif;
@@ -259,11 +267,14 @@ html {
 }
 
 /* Global Styles - global.scss */
+body {
+  color: #19323C;
+}
+
 a,
 a:visited {
   text-decoration: none;
   border: none;
-  color: inherit;
 }
 
 img {
@@ -277,12 +288,186 @@ ul {
   margin: 0;
 }
 
+p, h2 {
+  font-family: "Ubuntu", sans-serif;
+}
+
 .wrapper {
   max-width: 1080px;
   width: 90%;
   margin: 0 auto;
 }
 
+.button {
+  padding: 15px 20px;
+  background-color: #3F7FA9;
+  border-radius: 100px;
+  font-size: 2rem;
+  color: #F3F7F0;
+}
+
 /* Header Styles - header.scss */
+header {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, #3F7FA9), color-stop(30%, #F3F7F0));
+  background-image: linear-gradient(to right, #3F7FA9 30%, #F3F7F0 30%);
+  min-height: 95vh;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+  margin: 0 auto;
+  padding: 50px 0 0;
+  font-size: 1.8rem;
+}
+
+header nav a {
+  color: #19323C;
+  position: relative;
+}
+
+header nav a:hover,
+header nav a:focus,
+header nav ul:not(:hover) .activeNav {
+  color: #EF414C;
+}
+
+header nav a:hover::after,
+header nav a:focus::after,
+header nav ul:not(:hover) .activeNav::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  top: -52px;
+  background-color: #EF414C;
+}
+
+h1 {
+  margin: 10px 0;
+  font-family: "Abril Fatface", cursive;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.header-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 50px 0;
+}
+
+.header-image {
+  width: 250px;
+  height: 400px;
+  position: relative;
+  background-color: #EF414C;
+}
+
+.header-text {
+  margin-right: 50px;
+}
+
+.header-text p {
+  margin: 0;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.header-text h2 {
+  margin: 0;
+  font-size: 2.8rem;
+}
+
+.header-resume {
+  margin: 100px auto 0;
+  display: block;
+  width: 150px;
+  text-align: center;
+}
+
 /* Main Styles - header.scss */
+h2 {
+  font-size: 3rem;
+}
+
+.about-me {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-me h3, .about-me p {
+  font-size: 2.4rem;
+}
+
+.about-me .text-highlight {
+  color: #EF414C;
+}
+
+.about-me .profile-text {
+  width: calc(60% - 20px);
+  margin: 10px;
+  padding-top: 60px;
+}
+
+.about-me .profile-photo {
+  width: calc(40% - 20px);
+  margin: 10px;
+  position: relative;
+  top: -30px;
+}
+
+.about-me .profile-photo::after {
+  content: '';
+  display: block;
+  width: calc(100% - 15px);
+  height: calc(100% + 15px);
+  position: absolute;
+  top: -7.5px;
+  left: 7.5px;
+  border: 1px solid #EF414C;
+}
+
+.my-skills {
+  background-color: #F3F7F0;
+  min-height: 150px;
+}
+
+.my-skills h2 {
+  text-align: center;
+  padding: 20px;
+  color: #19323C;
+}
+
+.my-skills ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.my-skills li {
+  width: calc(100%/3 - 20px);
+  height: 50px;
+  margin: 10px;
+  background-color: #EF414C;
+}
+
 /* Footer Styles - footer.scss */

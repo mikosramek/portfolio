@@ -1,8 +1,10 @@
-$primary-color: #fff;
-$primary-accent: #444;
+$primary-color: #F3F7F0;
+$secondary-color: #3f7fa9;
+$primary-accent: #EF414C;
+$secondary-accent: #3F7FA9;
 
-$primary-black: #000;
-$primary-white: #fff;
+$primary-black: #19323C;
+$primary-white: #F3F7F0;
 
 $translucentBlack: transparentize($primary-black, 0.4);
 
@@ -10,8 +12,17 @@ $font-serif: serif;
 $font-sans-serif: sans-serif;
 
 
-$first-break: 1250px;
-$second-break: 1125px;
-$third-break: 980px;
-$fourth-break: 750px;
-$fifth-break: 400px;
+
+$body-text: 'Ubuntu', sans-serif;
+
+$header-text: 'Abril Fatface', cursive;
+
+
+/*
+accent: #EF414C
+primary: #F3F7F0
+secondary: #19323C
+tertiary: #3F7FA9
+yellow: #F8EC70
+red: #F0575A
+*/

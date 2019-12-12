@@ -1,0 +1,71 @@
+header {
+  background-image: linear-gradient(to right, $secondary-accent 30%, $primary-color 30%);
+  min-height: 95vh;
+  nav {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+      margin: 0 auto;
+      padding: 50px 0 0;
+      font-size: 1.8rem;
+    }
+
+    a {
+      color: $primary-black;
+      position: relative;
+    }
+    a:hover,
+    a:focus,
+    ul:not(:hover) .activeNav {
+      color: $primary-accent;
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        left: 0;
+        top: -52px;
+        background-color: $primary-accent;    
+      }
+    }
+  }
+}
+h1 {
+  margin: 10px 0;
+  font-family: $header-text;
+  font-size: 5rem;
+  text-align: center;
+}
+.header-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+.header-image {
+  width: 250px;
+  height: 400px;
+  position: relative;
+  background-color: $primary-accent;
+}
+.header-text {
+  margin-right: 50px;
+  p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+  h2 {
+    margin: 0;
+    font-size: 2.8rem;
+  }
+}
+.header-resume {
+  margin: 100px auto 0;
+  display: block;
+  width: 150px;
+  text-align: center;
+}
