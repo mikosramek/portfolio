@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +8,60 @@
   <title>Miko Sramek - Web Developer</title>
 
   <link rel='stylesheet' href='styles/style.css'>
-  <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Ubuntu|Abril+Fatface&display=swap" rel="stylesheet"> 
-
+  <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Ubuntu|Abril+Fatface&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 </head>
 <body>
-  <header>
+  <header id="home">
     <div class="wrapper">
       <nav>
         <ul>
-          <li><a href="" class="activeNav">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Projects</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#home" class="activeNav">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="header-content">
-        <div class="header-image">
-          <!-- <img src="./assets/2019-fall-Miko-Sramek.jpg" alt="Miko Sramek smiling in front of a blue background."> -->
+        <div class="header-image" id="header-image">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="header-text">
           <h2>Hello,</h2>
           <h1>I'm Miko Šrámek</h1>
-          <p>web developer . game designer</p>
-          <a href="" class="button header-resume">Resume</a>
+          <p>web developer . <span id="egg">game designer</span> . motion enthusiast</p>
+          <a href="" class="button header-resume">
+            Talk to me
+            <span></span>
+          </a>
         </div>
-        
+
       </div>
     </div>
   </header>
-  <main>
+  <main id="maincontent">
     <!-- Start of Wrapper -->
     <div class="wrapper">
-      <section class="about-me">
+      <section class="about-me" id="about">
         <div class="profile-text">
           <h2>About Me</h2>
-          <p class="text-highlight">I am a passionate front-end developer who is always seeking new experiences and has roots in Game Design.</p>
+          <p class="text-highlight">I am a passionate front-end developer who is always seeking new experiences and has
+            roots in Game Design.</p>
           <p>
-            I have worked with several small start-ups designing and creating content to help bring products to being market-ready. I hope to bring my design and UX experience to creating websites for products and people, and eventually grow my skills to become a full-stack developer.
+            I have worked with several small start-ups designing and creating content to help bring products to being
+            market-ready. I hope to bring my design and UX experience to creating websites for products and people, and
+            eventually grow my skills to become a full-stack developer.
           </p>
         </div>
         <div class="profile-photo">
+          <img src="./assets/miko-thinlogo.png" alt="" class="profile-photo-tag">
           <img src="./assets/2019-fall-Miko-Sramek.jpg" alt="Miko Sramek">
         </div>
       </section>
@@ -57,47 +72,119 @@
         <h2>My Skills</h2>
         <ul>
           <li>
-            <i class='fas fa-map-marker-alt'></i>
+            <div class="skill-icon">
+              <i class='fab fa-html5'></i>
+            </div>
+            <p> HTML5</p>
           </li>
           <li>
-
+            <div class="skill-icon">
+              <i class='fab fa-css3'></i>
+            </div>
+            <p> CSS3</p>
           </li>
           <li>
-
+            <div class="skill-icon">
+              <i class='fab fa-sass'></i>
+            </div>
+            <p> SASS</p>
           </li>
           <li>
-
+            <div class="skill-icon">
+              <i class='fab fa-js'></i>
+            </div>
+            <p>JavaScript</p>
           </li>
           <li>
-
+            <div class="skill-icon">
+              <i class="devicon-jquery-plain"></i>
+            </div>
+            <p> jQuery</p>
           </li>
           <li>
-            
+            <div class="skill-icon">
+              <i class="fab fa-react"></i>
+            </div>
+            <p> React</p>
+          </li>
+          <li>
+            <div class="skill-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <p> Firebase</p>
+          </li>
+          <li>
+            <div class="skill-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <p> Github</p>
+          </li>
+          <li>
+            <div class="skill-icon">
+              <i class='fab fa-git-square'></i>
+            </div>
+            <p> Git</p>
+          </li>
+          <!-- <li>
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <p> APIs</p>
+          </li> -->
+          <li>
+            <div class="skill-icon">
+              <i class='fas fa-gamepad'></i>
+            </div>
+            <p>Unity & C#</p>
           </li>
         </ul>
-      </div>
+      </div> <!-- End of Wrapper -->
     </section>
-    <section class="my-projects">
+    <section class="my-projects" id="projects">
+      <!-- Start of Wrapper -->
       <div class="wrapper">
         <h2>See what I've made</h2>
-      </div>
+        <div>
+          <h3>Dear Magic</h3>
+          <img src="" alt="">
+          <p></p>
+        </div>
+        <div>
+          <h3>The Restaurant Mall</h3>
+          <img src="" alt="">
+          <p></p>
+        </div>
+        <div>
+          <h3><span class="visually-hidden">The House of Qhinos</span><i class="far fa-eye" aria-hidden="true"></i></h3>
+          <img src="" alt="">
+          <p></p>
+        </div>
+      </div> <!-- End of Wrapper -->
     </section>
-    <section class="my-contacts">
+    <section class="my-contacts" id="contact">
+      <!-- Start of Wrapper -->
       <div class="wrapper">
         <h2>Touch base!</h2>
-      </div>
+      </div> <!-- End of Wrapper -->
     </section>
+
   </main>
   <footer>
     <div class="wrapper">
-
+      <p>mikosramek © 2019</p>
     </div>
   </footer>
+  <div class="hidden-button-small" id="hidden-button-small"></div>
+  <svg class="hidden-button" id="hidden-button" xmlns="http://www.w3.org/2000/svg" width="60" height="30" viewBox="0 0 51 21">
+    <path fill="none" stroke="#000" stroke-width="1" d="M1.64725561,10.5 L15.89184,17.4858498 C22.2521193,20.6050673 29.7099953,20.5467884 36.0207512,17.3285543 L49.4111194,10.5 L36.0207512,3.67144571 C29.7099953,0.453211623 22.2521193,0.39493274 15.89184,3.51415019 L1.64725561,10.5 Z"/>
+  </svg>  
   <!-- jQuery -->
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <!-- Main Script -->
   <script src='./scripts/script.js'></script>
   <!-- Load any other plugins here: -->
   <script src='https://kit.fontawesome.com/97241a1aa1.js' crossorigin='anonymous'></script>
+
 </body>
+
 </html>

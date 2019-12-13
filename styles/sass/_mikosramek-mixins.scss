@@ -1,0 +1,82 @@
+// Created by Miko Sramek
+
+@mixin media($width) {
+	@media only screen and (max-width: $width) {
+		@content;
+	}
+}
+@mixin media-min-max($min-width, $max-width) {
+	@media only screen and (max-width: $max-width) and (min-width: $min-width) {
+		@content;
+	}
+}
+
+@mixin absolute-fill (){
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+}
+@mixin center-flex { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin position($type, $top, $right, $bottom, $left) { 
+	position: $type; 
+	top: $top; 
+	right: $right; 
+	bottom: $bottom; 
+	left: $left; 
+}
+@mixin pseudo() {
+	content: '';
+	position: absolute;
+}
+// Allows for fall back if rem doesn't work?
+@mixin font-size($sizeValue){
+	font-size: $sizeValue * 1px;
+	font-size: ($sizeValue/10) * 1rem;
+}
+@mixin colour-children($n, $startColour, $amount) {
+	@for $_ from 0 through $n+1 {
+			&:nth-child(#{$_}){
+					background-color:hue-shift($startColour, $amount, $_);
+			}
+	}   
+}
+@mixin linear-from-to ($direction, $from, $to, $steps){
+	$result: $from;
+	@for $_ from 1 to $steps {
+		$percent: $_ / $steps;
+		$result: $result, lerp-color($from, $to, $percent);
+	}
+	$result: $result, $to;
+	background: linear-gradient(to $direction, $result);
+}
+@mixin spanner($steps, $topStep, $max) {
+	@for $step from 1 through $steps {
+			$percent: $step / $steps;
+			$height: $max;
+			@if $step < $topStep {
+				$percent: $step / $topStep;
+				$height: $percent * $max;
+			} @else if $step == $topStep {
+				$height: $max;
+			} @else {
+				$percent: -($step - $topStep) / $steps;
+				$height: $max + $percent * $max;
+			}
+			$animName: 'wiggle'+$step;
+			&:nth-child(#{$step}){
+					height:#{$height}px;
+					animation: $animName 1s #{($step / $steps) * 0.5}s infinite alternate ease-in-out;
+			}
+			@keyframes #{$animName} {
+				0% {
+					height: #{$height}px;
+				}
+				100% {
+					height: #{$height * 1.1}px;
+				}
+			}
+	}   
+}

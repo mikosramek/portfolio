@@ -3,6 +3,8 @@ header {
   min-height: 95vh;
   nav {
     ul {
+      position: relative;
+      z-index: 2;
       display: flex;
       justify-content: space-between;
       width: 40%;
@@ -39,20 +41,46 @@ h1 {
   text-align: center;
 }
 .header-content {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 50px 0;
 }
 .header-image {
-  width: 250px;
-  height: 400px;
   position: relative;
-  background-color: $primary-accent;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 300px;
+  span {
+    background-color: transparentize($primary-accent, 0);
+    // border: 1px solid $primary-accent;
+    width: 30px;
+    height: 60px;
+    margin: 10px 10px;
+    display: block;
+    @include spanner(7, 3, 250);
+  }
 }
+.header-image.animate {
+  animation: intro-squash 1.5s forwards;
+}
+@keyframes intro-squash {
+  0%{
+    transform: none;
+    left: 0;
+  }
+  100%{
+    transform: scaleY(0.05);
+    left: 47.5%;
+  }
+}
+
+
 .header-text {
   margin-right: 50px;
+  position: relative;
   p {
     margin: 0;
     text-align: center;
