@@ -1,0 +1,11 @@
+footer {
+  // background-image: linear-gradient(to right, $secondary-accent 70%, $primary-color 70%);
+  background-color: $secondary-accent;
+  text-align: center;
+  p {
+    padding: 75px 0 25px;
+    margin: 0;
+    color: $primary-color;
+    font-size: 1.9rem;
+  }
+}

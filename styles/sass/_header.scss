@@ -9,7 +9,7 @@ header {
       justify-content: space-between;
       width: 40%;
       margin: 0 auto;
-      padding: 50px 0 0;
+      padding: 50px 0 0 50px;
       font-size: 1.8rem;
     }
 
@@ -44,7 +44,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 50px 0;
+  padding: 100px 0 50px;
 }
 .header-image {
   position: relative;
@@ -55,7 +55,6 @@ h1 {
   height: 300px;
   span {
     background-color: transparentize($primary-accent, 0);
-    // border: 1px solid $primary-accent;
     width: 30px;
     height: 60px;
     margin: 10px 10px;
@@ -96,4 +95,7 @@ h1 {
   display: block;
   width: 150px;
   text-align: center;
+}
+.egg {
+  cursor: pointer;
 }

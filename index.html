@@ -36,8 +36,8 @@
         <div class="header-text">
           <h2>Hello,</h2>
           <h1>I'm Miko Šrámek</h1>
-          <p>web developer . <span id="egg">game designer</span> . motion enthusiast</p>
-          <a href="" class="button header-resume">
+          <p>web developer . <span id="egg" class="egg">game designer</span> . motion enthusiast</p>
+          <a href="#contact" class="button header-resume">
             Talk to me
             <span></span>
           </a>
@@ -51,7 +51,7 @@
     <div class="wrapper">
       <section class="about-me" id="about">
         <div class="profile-text">
-          <h2>About Me</h2>
+          <h2>Get to know me</h2>
           <p class="text-highlight">I am a passionate front-end developer who is always seeking new experiences and has
             roots in Game Design.</p>
           <p>
@@ -61,12 +61,13 @@
           </p>
         </div>
         <div class="profile-photo">
-          <img src="./assets/miko-thinlogo.png" alt="" class="profile-photo-tag">
+          <img src="./assets/cat-skull.png" alt="" class="profile-photo-tag">
           <img src="./assets/2019-fall-Miko-Sramek.jpg" alt="Miko Sramek">
         </div>
       </section>
     </div> <!-- End of Wrapper -->
     <section class="my-skills">
+      <div class="skill-highlight"></div>
       <!-- Start of Wrapper -->
       <div class="wrapper">
         <h2>My Skills</h2>
@@ -144,27 +145,128 @@
       <!-- Start of Wrapper -->
       <div class="wrapper">
         <h2>See what I've made</h2>
-        <div>
-          <h3>Dear Magic</h3>
-          <img src="" alt="">
-          <p></p>
-        </div>
-        <div>
-          <h3>The Restaurant Mall</h3>
-          <img src="" alt="">
-          <p></p>
-        </div>
-        <div>
-          <h3><span class="visually-hidden">The House of Qhinos</span><i class="far fa-eye" aria-hidden="true"></i></h3>
-          <img src="" alt="">
-          <p></p>
-        </div>
+        <ul>
+          <li class="project">
+            <div class="project-text">
+              <h3>Dear Magic</h3>
+              <p>An application that allows users to add, filter, check off, and update prices of Magic: the Gathering cards within a list.</p>
+              <p>Uses React to handle state and user flow, Firebase to store users' lists, and the Scryfall API to gather data on the cards.</p>
+              <a href="https://github.com/mikosramek/dear-magic" target="_blank" class="button">View on Github<span></span></a>
+              <a href="https://mikosramek.github.io/dear-magic/" target="_blank" class="button">View Live<span></span></a>
+            </div> <!-- End of Project Text Div -->
+            <div class="project-image">
+              <div class="project-image-border">
+                <img src="./assets/dearmagic.png" alt="">
+              </div>
+              <!-- Start of Tech Used List -->
+              <ul>
+                <li>React</li>
+                <li>JavaScript</li>
+                <li>Firebase</li>
+                <li>REST APIs</li>
+                <li>HTML5</li>
+                <li>Sass</li>
+              </ul> <!-- End of Tech Used List -->
+            </div> <!-- End of Project Image Div -->
+          </li>
+          <li class="project">
+            <div class="project-text">
+              <h3>The Restaurant Mall</h3>
+              <p>A fully responsive multi-page PSD conversion.</p>
+              <p>Uses both flexbox and grid to layout site elements.</p>
+              <a href="https://github.com/mikosramek/the-restaurant-mall" target="_blank" class="button">View on Github<span></span></a>
+              <a href="https://mikosramek.github.io/the-restaurant-mall/" target="_blank" class="button">View Live<span></span></a>
+            </div>
+            <div class="project-image">
+              <div class="project-image-border">
+                <img src="./assets/restaurant.png" alt="">
+              </div>
+              <!-- Start of Tech Used List -->
+              <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Responsive</li>
+                <li>Multi-page</li>
+              </ul> <!-- End of Tech Used List -->
+            </div>
+          </li>
+          <li class="project">
+            <div class="project-text">
+              <h3><i class="far fa-eye" aria-hidden="true"></i><span class="sub-title">(The House of Qhinos)</span></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus reiciendis necessitatibus commodi assumenda deleniti blanditiis dolor iure sit voluptatum, quas, delectus ea, dignissimos autem molestias.</p>
+              <a href="https://github.com/mikosramek/theHouseOfQhinos" target="_blank" class="button">View on Github<span></span></a>
+              <a href="https://mikosramek.github.io/theHouseoOfQhinos/" target="_blank" class="button">View Live<span></span></a>
+            </div>
+            <div class="project-image">
+              <div class="project-image-border">
+              	<img src="./assets/eye.png" alt="">
+              </div>
+              <!-- Start of Tech Used List -->
+              <ul>
+                <li>HTML5</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>CSS3</li>
+                <li>Sass</li>
+              </ul> <!-- End of Tech Used List -->
+            </div>
+          </li>
+        </ul> <!-- End of Project List -->
       </div> <!-- End of Wrapper -->
     </section>
     <section class="my-contacts" id="contact">
       <!-- Start of Wrapper -->
       <div class="wrapper">
-        <h2>Touch base!</h2>
+        <h2>Touch base</h2>
+        <div class="contact-flex">
+          <ul>
+            <li>
+              <a href="mailto:miko@mikosramek.ca" target="_blank">
+                <i class="fas fa-envelope-square" aria-label="Email me."></i>
+                <p>miko@mikosramek.ca</p>
+              </a>
+            </li>
+            <li>
+              <a href="http://twitter.com/mikosramek" target="_blank">
+                <i class="fab fa-twitter" aria-label="Go to my twitter."></i>
+                <p>@mikosramek</p>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/mikosramek" target="_blank">
+                <i class="fab fa-github" aria-label="View my projects on Github."></i>
+                <p>mikosramek</p>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/miko-sramek" target="_blank">
+                <i class="fab fa-linkedin" aria-label="Visit my linkedin profile."></i>
+                <p>miko-sramek</p>
+              </a>
+            </li>
+            <li>
+              <a href="https://mikosramek.itch.io/" target="_blank">
+                <i class="fab fa-itch-io" aria-label="See my games on itch.io."></i>
+                <p>mikosramek</p>
+              </a>
+            </li>
+          </ul> <!-- End of Contact List -->
+          <!-- action="https://formspree.io/xgevgoyy" method="POST" -->
+          <form id="contact-form" method="POST">
+            <h3>Shoot me an email</h3>
+            <label for="name" class="visually-hidden">Your name:</label>
+            <input type="text" id="name" name="name" placeholder="your name" required>
+            <span></span>
+            <label for="email" class="visually-hidden">Your email:</label>
+            <input type="email" id="email" name="email" placeholder="your email" required>
+            <span></span>
+            <label for="message" class="visually-hidden">Your cool message:</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="your cool message to me" required></textarea>
+            <span></span>
+            <button type="submit">Submit<span></span></button>
+            <p id="contact-form-status"></p>
+          </form>
+        </div> <!-- End of Contact Flex Div -->
       </div> <!-- End of Wrapper -->
     </section>
 
@@ -180,11 +282,11 @@
   </svg>  
   <!-- jQuery -->
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js'></script>
   <!-- Main Script -->
   <script src='./scripts/script.js'></script>
   <!-- Load any other plugins here: -->
   <script src='https://kit.fontawesome.com/97241a1aa1.js' crossorigin='anonymous'></script>
-
 </body>
 
 </html>
