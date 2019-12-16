@@ -932,13 +932,12 @@ main h3 {
   width: 100%;
   text-align: center;
   opacity: 0;
-  color: #000;
+  color: #19323C;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
 }
 
 .my-skills li:hover .skill-icon {
-  background-color: #EF414C;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-box-shadow: 0 0 15px rgba(25, 50, 60, 0.5);
@@ -1105,72 +1104,49 @@ main h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
+  padding-top: 25px;
 }
 
-.contact-flex i {
-  font-size: 4rem;
-  color: #19323C;
-  position: relative;
-  z-index: 3;
-  padding: 20px;
+.contact-flex li {
+  margin: 10px 0;
+  padding-right: 100px;
 }
 
 .contact-flex a {
-  margin: 15px;
-  height: 80px;
-  width: 80px;
-  background-color: #7BB6DE;
-  border-radius: 50%;
+  color: #19323C;
+  font-size: 2rem;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: -webkit-transform 0.35s;
-  transition: -webkit-transform 0.35s;
-  transition: transform 0.35s;
-  transition: transform 0.35s, -webkit-transform 0.35s;
 }
 
-.contact-flex a:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.contact-flex a span {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
 }
 
 .contact-flex a::after {
   content: '';
   display: block;
+  width: 125%;
+  height: 100%;
   position: absolute;
-  bottom: -10%;
-  right: 10%;
-  width: 80%;
-  height: 120%;
-  border-radius: 50%;
+  top: 40%;
+  right: 2.5px;
+  z-index: 1;
+  border: 1px solid #EF414C;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
-  border: 1px solid #EF414C;
-  z-index: 2;
 }
 
 .contact-flex a:hover::after, .contact-flex a:focus::after {
-  bottom: 10%;
-  right: -10%;
-  width: 120%;
-  height: 80%;
+  width: 100%;
 }
 
 form {
@@ -1207,7 +1183,7 @@ form textarea {
   margin-top: 5px;
   margin-bottom: 20px;
   background-color: #fff0;
-  color: #EF414C;
+  color: #19323C;
   border: none;
   padding: 10px;
 }
@@ -1328,6 +1304,6 @@ footer {
 footer p {
   padding: 75px 0 25px;
   margin: 0;
-  color: #F3F3F3;
+  color: #19323C;
   font-size: 1.9rem;
 }
