@@ -20,3 +20,20 @@
     transform: translateX(0px);
   }
 }
+
+@keyframes ebb-and-flow {
+  0% {
+    $offset: 15px;
+    width: calc(100% - #{$offset});
+    height: calc(100% + #{$offset});
+    top: -$offset/2;
+    left: $offset/2;
+  }
+  100% {
+    $offset: -15px;
+    width: calc(100% - #{$offset});
+    height: calc(100% + #{$offset});
+    top: -$offset/2;
+    left: $offset/2;
+  }
+}

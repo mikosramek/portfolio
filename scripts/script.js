@@ -1,4 +1,35 @@
 const app = {};
+const animations = {};
+animations.rotateIn = {
+  property: 'transform',
+  type: 'rotateY',
+  time: 1.2,
+  delay: 0,
+  targetValue: '0deg',
+  easing: 'ease-in-out',
+  topDistance: 500,
+  bottomDistance: 100
+}
+animations.fadeIn = {
+  property: 'opacity',
+  type: 'calc',
+  time: 0.5,
+  delay: 0,
+  targetValue: 1,
+  easing: 'ease-in-out',
+  topDistance: 800,
+  bottomDistance: 100
+}
+animations.translateIn = {
+  property: 'transform',
+  type: 'translateX',
+  time: 1.2,
+  delay: 0,
+  targetValue: '0px',
+  easing: 'ease-in-out',
+  topDistance: 600,
+  bottomDistance: 100
+}
 
 app.isFollowerActive = false;
 
@@ -63,41 +94,42 @@ app.setUpContactForm = function() {
   })
 }
 
-app.animateElement = (parentToAnimateAtSelector, childToAnimateSelector, transform, time, delay, amount, easing, offset) => {
-  const scrollPoint = $(parentToAnimateAtSelector).offset().top;
-  // transition: time transform linear;
-  // transform: transformType(amount);
-  // transform: transformType(0);
-  $(`${parentToAnimateAtSelector} ${childToAnimateSelector}`)
-    .css({
-      transform: `${transform}(${amount})`,
+app.animateElement = (parent, child, amount, ao) => {
+  const scrollPoint = $(parent).offset().top;
+  const bottomHeight = scrollPoint + $(parent).height();
+  const target = $(`${parent} ${child}`);
+  target.css({
+    [ao.property]: `${ao.type}(${amount})`,
+  });
+  if(window.scrollY >= scrollPoint - ao.topDistance && window.scrollY <= bottomHeight + ao.bottomDistance){
+    target.css({
+      [ao.property]: `${ao.type}(${ao.targetValue})`, 
+      transition: `${ao.property} ${ao.time}s ${ao.delay}s ${ao.easing}`,
     });
-
-  if(window.scrollY >= scrollPoint - offset){
-    $(`${parentToAnimateAtSelector} ${childToAnimateSelector}`)
-      .css({
-        transform: `${transform}(0)`, 
-        transition: `transform ${time}s ${delay}s ${easing}`,
-      });
   }
-
-
   $(window).scroll(function() {
-    if(window.scrollY >= scrollPoint - offset){
-      $(`${parentToAnimateAtSelector} ${childToAnimateSelector}`)
-        .css({
-          transform: `${transform}(0)`, 
-          transition: `transform ${time}s ${delay}s ${easing}`,
-        });
+    if(window.scrollY >= scrollPoint - ao.topDistance && window.scrollY <= bottomHeight + ao.bottomDistance){
+      target.css({
+        [ao.property]: `${ao.type}(${ao.targetValue})`, 
+        transition: `${ao.property} ${ao.time}s ${ao.delay}s ${ao.easing}`,
+      });
     }
   });
+}
+
+app.setupAnimations = () => {
+  app.animateElement('#about', '#profile-text', '-100px', animations.translateIn);
+  app.animateElement('#about', '#profile-photo', '100px', animations.translateIn);
+  app.animateElement('#my-skills', 'li', '90deg', animations.rotateIn);
+  app.animateElement('#project-one', '.project-image-border', 0, animations.fadeIn);
+  app.animateElement('#project-two', '.project-image-border', 0, animations.fadeIn);
+  app.animateElement('#project-three', '.project-image-border', 0, animations.fadeIn);
 }
 
 app.init = () => {
   app.bindDomElements();
   app.setUpContactForm();
-  app.animateElement('#my-skills', 'li', 'rotateY', 1.2, 0, '90deg', 'ease-in-out', 500);
-  // app.animateElement('.project', '.project-image-border', 'slide-in', 0.4, 0, 'forwards', 500);
+  app.setupAnimations();
 }
 
 $(document).ready(function(){

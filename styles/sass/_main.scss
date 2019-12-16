@@ -52,24 +52,7 @@ main {
       display: block;
       position: absolute;
     }
-  }
-  
-}
-@keyframes ebb-and-flow {
-  0% {
-    $offset: 15px;
-    width: calc(100% - #{$offset});
-    height: calc(100% + #{$offset});
-    top: -$offset/2;
-    left: $offset/2;
-  }
-  100% {
-    $offset: -15px;
-    width: calc(100% - #{$offset});
-    height: calc(100% + #{$offset});
-    top: -$offset/2;
-    left: $offset/2;
-  }
+  } 
 }
 .my-skills {
   margin: 50px 0 75px;
@@ -182,7 +165,7 @@ main {
     font-size: 2rem;
   }
   p:last-of-type {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
   .sub-title {
     color: transparentize($primary-black, 0.4);
@@ -190,16 +173,17 @@ main {
     font-family: $header-text;
     padding-left: 10px;
   }
-  .project-text {
-    width: calc(50% - 20px);
-    margin: 0 20px;
-    padding-right: 20px;
-  }
+  .project-text,
   .project-image {
     position: relative;
     width: calc(50% - 20px);
-    background-color: $primary-color;
     margin: 0 20px;
+  }
+  .project-text {
+    padding-right: 20px;
+  }
+  .project-image {
+    background-color: $primary-color;
     padding: 0px 0;
     ul {
       display: flex;
@@ -244,6 +228,54 @@ main {
   margin-top: 20px;
   ul {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  i {
+    font-size: 4rem;
+    color: $primary-black;
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+  }
+  a {
+    margin: 15px;
+    height: 80px;
+    width: 80px;
+    background-color: $secondary-accent;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transition: transform 0.35s;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -10%;
+      right: 10%;
+      width: 80%;
+      height: 120%;
+      border-radius: 50%;
+      transition: all 0.35s;
+      border: 1px solid $primary-accent;
+      z-index: 2;
+    }
+    &:hover::after,
+    &:focus::after {
+      bottom: 10%;
+      right: -10%;
+      width: 120%;
+      height: 80%;
+    }
   }
 }
 form {
