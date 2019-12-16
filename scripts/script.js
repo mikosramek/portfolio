@@ -30,6 +30,9 @@ app.follower = function() {
   app.$smallFollower.addClass('active');
 }
 
+
+// ajax formatting was taken from
+// https://stackoverflow.com/questions/33984667/how-to-get-around-the-formspree-redirect
 app.setUpContactForm = function() {
   const $form = $('#contact-form');
   const $name = $('#name');
@@ -60,9 +63,41 @@ app.setUpContactForm = function() {
   })
 }
 
+app.animateElement = (parentToAnimateAtSelector, childToAnimateSelector, transform, time, delay, amount, easing, offset) => {
+  const scrollPoint = $(parentToAnimateAtSelector).offset().top;
+  // transition: time transform linear;
+  // transform: transformType(amount);
+  // transform: transformType(0);
+  $(`${parentToAnimateAtSelector} ${childToAnimateSelector}`)
+    .css({
+      transform: `${transform}(${amount})`,
+    });
+
+  if(window.scrollY >= scrollPoint - offset){
+    $(`${parentToAnimateAtSelector} ${childToAnimateSelector}`)
+      .css({
+        transform: `${transform}(0)`, 
+        transition: `transform ${time}s ${delay}s ${easing}`,
+      });
+  }
+
+
+  $(window).scroll(function() {
+    if(window.scrollY >= scrollPoint - offset){
+      $(`${parentToAnimateAtSelector} ${childToAnimateSelector}`)
+        .css({
+          transform: `${transform}(0)`, 
+          transition: `transform ${time}s ${delay}s ${easing}`,
+        });
+    }
+  });
+}
+
 app.init = () => {
   app.bindDomElements();
   app.setUpContactForm();
+  app.animateElement('#my-skills', 'li', 'rotateY', 1.2, 0, '90deg', 'ease-in-out', 500);
+  // app.animateElement('.project', '.project-image-border', 'slide-in', 0.4, 0, 'forwards', 500);
 }
 
 $(document).ready(function(){

@@ -257,6 +257,60 @@ tertiary: #3F7FA9
 yellow: #F8EC70
 red: #F0575A
 */
+/* Animations */
+@-webkit-keyframes rotate-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@keyframes rotate-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
 /* Type Styles - type.scss */
 * {
   font-family: sans-serif;
@@ -295,7 +349,7 @@ h2, h3 {
 }
 
 p {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 .wrapper {
@@ -309,10 +363,10 @@ p {
 .button,
 button {
   padding: 15px 20px;
-  background-color: #3F7FA9;
+  background-color: #7BB6DE;
   border-radius: 100px;
   font-size: 2rem;
-  color: #F3F7F0;
+  color: #19323C;
   cursor: pointer;
   -webkit-transition: all 0.35s, outline 0s;
   transition: all 0.35s, outline 0s;
@@ -396,8 +450,8 @@ button {
 
 /* Header Styles - header.scss */
 header {
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, #3F7FA9), color-stop(30%, #F3F7F0));
-  background-image: linear-gradient(to right, #3F7FA9 30%, #F3F7F0 30%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, #7BB6DE), color-stop(30%, #F3F3F3));
+  background-image: linear-gradient(to right, #7BB6DE 30%, #F3F3F3 30%);
   min-height: 95vh;
 }
 
@@ -814,12 +868,11 @@ main h3 {
   position: absolute;
   height: 120px;
   width: 100%;
-  background-color: #3F7FA9;
+  background-color: #7BB6DE;
 }
 
 .my-skills h2 {
   padding: 20px;
-  color: #F3F7F0;
 }
 
 .my-skills ul {
@@ -843,6 +896,8 @@ main h3 {
   display: flex;
   position: relative;
   font-size: 2rem;
+  -webkit-transform-origin: top;
+          transform-origin: top;
 }
 
 .my-skills li .skill-icon {
@@ -851,7 +906,7 @@ main h3 {
   padding: 20px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  background-color: #F3F7F0;
+  background-color: #F3F3F3;
   border-left: 2px solid #EF414C;
   font-size: 4rem;
   display: -webkit-box;
@@ -886,8 +941,8 @@ main h3 {
   background-color: #EF414C;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  -webkit-box-shadow: 0 0 5px #19323C;
-          box-shadow: 0 0 5px #19323C;
+  -webkit-box-shadow: 0 0 15px rgba(25, 50, 60, 0.5);
+          box-shadow: 0 0 15px rgba(25, 50, 60, 0.5);
 }
 
 .my-skills li:hover p {
@@ -940,6 +995,10 @@ main h3 {
   left: -10px;
 }
 
+.project:nth-of-type(2n) .project-image .project-image-border:hover::before {
+  left: 10px;
+}
+
 .project:nth-of-type(2n) .project-text {
   padding-right: 0;
   padding-left: 20px;
@@ -955,6 +1014,10 @@ main h3 {
 
 .project p {
   font-size: 2rem;
+}
+
+.project p:last-of-type {
+  margin-bottom: 30px;
 }
 
 .project .sub-title {
@@ -973,31 +1036,9 @@ main h3 {
 .project .project-image {
   position: relative;
   width: calc(50% - 20px);
-  background-color: #F3F7F0;
+  background-color: #F3F3F3;
   margin: 0 20px;
   padding: 0px 0;
-}
-
-.project .project-image .project-image-border {
-  position: relative;
-  left: 20px;
-  top: -70px;
-}
-
-.project .project-image .project-image-border img {
-  position: relative;
-  z-index: 2;
-}
-
-.project .project-image .project-image-border::before {
-  content: '';
-  display: block;
-  height: calc(100% + 20px);
-  width: 100%;
-  border: 1px solid #EF414C;
-  position: absolute;
-  top: -10px;
-  right: -10px;
 }
 
 .project .project-image ul {
@@ -1013,10 +1054,33 @@ main h3 {
 
 .project .project-image li {
   background-color: #fff;
-  border: 1px solid #3F7FA9;
+  border: 1px solid #7BB6DE;
   margin: 5px;
   padding: 5px;
   font-size: 1.9rem;
+}
+
+.project .project-image-border {
+  position: relative;
+  left: 20px;
+  top: -70px;
+}
+
+.project .project-image-border::before {
+  content: '';
+  display: block;
+  height: calc(100% + 20px);
+  width: 100%;
+  border: 1px solid #EF414C;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.project .project-image-border:hover::before {
+  right: 10px;
 }
 
 .contact-flex {
@@ -1046,7 +1110,7 @@ form {
           flex-direction: column;
   position: relative;
   top: 30px;
-  background-color: #F3F7F0;
+  background-color: #F3F3F3;
   color: #19323C;
   font-size: 2rem;
 }
@@ -1085,6 +1149,19 @@ form input {
   height: 50px;
   position: relative;
   z-index: 2;
+}
+
+form input,
+form textarea {
+  border: 2px solid #fff0;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 2px solid #EF414C;
 }
 
 form input:focus::-webkit-input-placeholder,
@@ -1164,18 +1241,18 @@ form input:invalid + span::after {
 form textarea:focus-within + span::after,
 form textarea:invalid + span::after {
   height: 250px;
-  top: -265px;
+  top: -270px;
 }
 
 /* Footer Styles - footer.scss */
 footer {
-  background-color: #3F7FA9;
+  background-color: #7BB6DE;
   text-align: center;
 }
 
 footer p {
   padding: 75px 0 25px;
   margin: 0;
-  color: #F3F7F0;
+  color: #F3F3F3;
   font-size: 1.9rem;
 }

@@ -1,0 +1,22 @@
+@keyframes rotate-in {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(25px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
