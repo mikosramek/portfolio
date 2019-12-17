@@ -1119,6 +1119,7 @@ main h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 900px) {

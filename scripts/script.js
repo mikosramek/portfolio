@@ -142,10 +142,8 @@ app.setupNav = () => {
   $(window).scroll(function() {
     let closest = 0;
     positions.forEach(function(pos, index) {
-      
       const a = Math.abs(window.scrollY - pos.offset().top);
       const b = Math.abs(window.scrollY - positions[closest].offset().top);
-      // console.log(pos, a,b);
       if(a < b){
         closest = index;
       }
@@ -157,28 +155,6 @@ app.setupNav = () => {
         item.removeClass('activeNav');
       }
     })
-    // console.log(positions[closest]);
-    // if(window.scrollY >= homeSection.offset().top - offset && window.scrollY <= homeSection.offset().top + homeSection.height()){
-    //   home.addClass('activeNav');
-    // }else{
-    //   home.removeClass('activeNav');
-    // }
-    // if(window.scrollY >= aboutSection.offset().top - offset && window.scrollY <= aboutSection.offset().top + aboutSection.height()){
-    //   about.addClass('activeNav');
-    // }else{
-    //   about.removeClass('activeNav');
-    // }
-    // if(window.scrollY >= projectsSection.offset().top - offset && window.scrollY <= projectsSection.offset().top + projectsSection.height()){
-    //   projects.addClass('activeNav');
-    // }else{
-    //   projects.removeClass('activeNav');
-    // }
-    // if(window.scrollY >= contactSection.offset().top - offset && window.scrollY <= contactSection.offset().top + contactSection.height()){
-    //   contact.addClass('activeNav');
-    // }else{
-    //   contact.removeClass('activeNav');
-    // }
-
   });
 }
 

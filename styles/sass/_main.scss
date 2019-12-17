@@ -152,6 +152,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow-x: hidden;
   @include media($second-break){
     flex-direction: column-reverse;
     margin: 140px auto;
