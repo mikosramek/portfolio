@@ -543,14 +543,15 @@ header nav a::after {
   height: 100%;
   width: 0%;
   top: 0;
-  right: 0%;
+  right: -2px;
   border: 1px solid #EF414C;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
 }
 
 header nav a.activeNav::after {
-  width: 100%;
+  right: -1px;
+  width: calc(100% + 1px);
 }
 
 h1 {

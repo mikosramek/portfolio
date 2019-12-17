@@ -35,12 +35,13 @@ header {
         height:100%;
         width: 0%;
         top: 0;
-        right: 0%;
+        right: -2px;
         border: 1px solid $primary-accent;
         transition: all 0.35s;
       }
       &.activeNav::after {
-        width: 100%;
+        right: -1px;
+        width: calc(100% + 1px);
       }
     }
   }
