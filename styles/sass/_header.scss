@@ -1,35 +1,46 @@
 header {
-  background-image: linear-gradient(to right, $secondary-accent 30%, $primary-color 30%);
+  background-image: linear-gradient(to right, $secondary-accent 20%, $primary-color 20%);
   min-height: 95vh;
+  position: relative;
   nav {
-    ul {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: space-between;
-      width: 40%;
-      margin: 0 auto;
-      padding: 50px 0 0 50px;
-      font-size: 1.8rem;
+    position: fixed;
+    top: 20%;
+    right: 10px;
+    z-index: 20;
+    @include media($third-break){
+      top: 10%;
     }
-
+    @include media($fourth-break){
+      top: 5%;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 2rem;
+    }
+    li {
+      text-align: right;
+      margin: 10px 0;
+    }
     a {
+      background-color: #fff;
+      padding: 2.5px;
       color: $primary-black;
       position: relative;
-    }
-    a:hover,
-    a:focus,
-    ul:not(:hover) .activeNav {
-      color: $primary-accent;
       &::after {
         content: '';
         display: block;
-        width: 100%;
-        height: 5px;
         position: absolute;
-        left: 0;
-        top: -52px;
-        background-color: $primary-accent;    
+        height:100%;
+        width: 0%;
+        top: 0;
+        right: 0%;
+        border: 1px solid $primary-accent;
+        transition: all 0.35s;
+      }
+      &.activeNav::after {
+        width: 100%;
       }
     }
   }
@@ -38,13 +49,22 @@ h1 {
   margin: 10px 0;
   font-family: $header-text;
   font-size: 5rem;
-  text-align: center;
+  text-align: left;
+  @include media($fourth-break){
+    font-size: 4rem;
+  }
+  @include media($fifth-break){
+    text-align: center;
+  }
 }
 .header-content {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 100px 0 50px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 220px 0 50px;
+  @include media($fourth-break){
+    justify-content: center;
+  }
 }
 .header-image {
   position: relative;
@@ -52,14 +72,17 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 300px;
+  height: 150px;
+  @include media($fourth-break){
+    display: none;
+  }
   span {
     background-color: transparentize($primary-accent, 0);
-    width: 30px;
+    width: 15px;
     height: 60px;
-    margin: 10px 10px;
+    margin: 10px 5px;
     display: block;
-    @include spanner(7, 3, 250);
+    @include spanner(7, 3, 150);
   }
 }
 .header-image.animate {
@@ -78,8 +101,17 @@ h1 {
 
 
 .header-text {
-  margin-right: 50px;
+  padding-right: 30%;
   position: relative;
+  @include media($first-break) {
+    padding-right: 15%;
+  }
+  @include media($third-break) {
+    padding-right: 5%;
+  }
+  @include media($fourth-break){
+    padding: 0;
+  }
   p {
     margin: 0;
     text-align: center;
@@ -88,6 +120,9 @@ h1 {
   h2 {
     margin: 0;
     font-size: 2.8rem;
+    @include media($fifth-break){
+      text-align: center;
+    }
   }
 }
 .header-resume {
@@ -98,4 +133,10 @@ h1 {
 }
 .egg {
   cursor: pointer;
+  @include media($fifth-break){
+    display: block;
+  }
+  @include media($final-break){
+    margin: 10px 0;
+  }
 }

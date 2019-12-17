@@ -16,6 +16,17 @@ $body-text: 'Work Sans', sans-serif;
 
 $header-text: 'Abril Fatface', cursive;
 
+$first-break: 975px;
+$second-break: 900px;
+$third-break: 760px;
+$fourth-break: 680px;
+$fifth-break: 470px;
+$final-break: 400px;
+/* 
+975px - header
+900px - about me / projects / contact
+470px - skills
+*/
 
 /*
 accent: #EF414C

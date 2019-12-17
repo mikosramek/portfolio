@@ -77,7 +77,7 @@ button {
 .hidden-button-small {
   position: absolute;
   top: 0;
-  left: calc(30%);
+  left: calc(20%);
   transform: translateX(-30px) translateY(45px);
   z-index: 3;
 }
@@ -90,8 +90,6 @@ button {
 .hidden-button-small {
   width: 20px;
   height: 20px;
-  // left: calc(30% - 10px);
-  // top: calc(65%);
   transform: translateX(-10px) translateY(500px);
   border-radius: 50px;
   background-color: $primary-accent;

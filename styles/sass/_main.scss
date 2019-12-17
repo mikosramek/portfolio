@@ -10,50 +10,73 @@ main {
 .about-me {
   display: flex;
   position: relative;
+  @include media($fourth-break){
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
   h3,p {
     font-size: 2.4rem;
   }
   .text-highlight {
     color: $primary-accent;
   }
-  .profile-text {
-    width: calc(60% - 20px);
-    margin: 10px;
-    padding-top: 60px;
-  }
-  .profile-photo {
-    width: calc(40% - 20px);
-    margin: 10px;
-    position: relative;
-    top: -50px;
-    &::after {
-      content: '';
-      display: block;
-      $offset: 15px;
-      width: calc(100% - #{$offset});
-      height: calc(100% + #{$offset});
-      position: absolute;
-      top: -$offset/2;
-      left: $offset/2;
-      border: 1px solid $primary-accent;
-      transition: all 0.35s;
-    }
-    &:hover::after {
-      $offset: -15px;
-      width: calc(100% - #{$offset});
-      height: calc(100% + #{$offset});
-      top: -$offset/2;
-      left: $offset/2;
-    }
-    .profile-photo-tag {
-      display: none;
-    }
-    &:active .profile-photo-tag {
-      display: block;
-      position: absolute;
-    }
-  } 
 }
+.profile-text {
+  width: calc(60% - 10px);
+  margin-right: 10px;
+  padding-top: 60px;
+  @include media($fourth-break){
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+.profile-photo {
+  width: calc(40% - 10px);
+  margin-left: 10px;
+  position: relative;
+  top: -50px;
+  @include media($second-break){
+    img {
+      object-fit: cover;
+      object-position: center 25%;
+      height: 100%;
+    }
+  }
+  @include media($fourth-break){
+    top: -10px;
+    margin-left: 0;
+    width: 100%;
+    height: 250px;
+  }
+  &::after {
+    content: '';
+    display: block;
+    $offset: 15px;
+    width: calc(100% - #{$offset});
+    height: calc(100% + #{$offset});
+    position: absolute;
+    top: -$offset/2;
+    left: $offset/2;
+    border: 1px solid $primary-accent;
+    transition: all 0.35s;
+  }
+  &:hover::after {
+    $offset: -15px;
+    width: calc(100% - #{$offset});
+    height: calc(100% + #{$offset});
+    top: -$offset/2;
+    left: $offset/2;
+  }
+  .profile-photo-tag {
+    display: none;
+  }
+  &:active .profile-photo-tag {
+    display: block;
+    position: absolute;
+  }
+} 
+
 .my-skills {
   margin: 50px 0 75px;
   .skill-highlight {
@@ -80,6 +103,9 @@ main {
     position: relative;
     font-size: 2rem;
     transform-origin: top;
+    @include media($fifth-break){
+      width: calc(50% - 20px);
+    }
     .skill-icon {
       width: 100%;
       height: 100px;
@@ -103,6 +129,10 @@ main {
       opacity: 0;
       color: $primary-black;
       transition: all 0.35s;
+      @include media($fifth-break){
+        opacity: 1;
+        left: 0;
+      }
     }
     &:hover {
       .skill-icon {
@@ -121,6 +151,11 @@ main {
   margin: 180px auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  @include media($second-break){
+    flex-direction: column-reverse;
+    margin: 140px auto;
+  }
   &:first-of-type {
     margin-top: 120px;
   }
@@ -132,13 +167,33 @@ main {
   }
   &:nth-of-type(2n){
     flex-direction: row-reverse;
+    @include media($second-break){
+      flex-direction: column-reverse;
+    }
     .project-image{
+      margin: 0;
+      margin-right: 20px;
+      @include media($second-break){
+        margin-right: 0;
+      }
       ul {
         right: -30px;
         justify-content: flex-end;
+        @include media($fifth-break){
+          right: 0;
+        }
       }
       .project-image-border {
         left: -10px;
+        @include media($second-break){
+          left: calc(40% - 20px);
+        }
+        @include media($fourth-break){
+          left: 15%;
+        }
+        @include media($fifth-break){
+          left: 0%;
+        }
         &::before {
           left: -10px;
         }
@@ -150,6 +205,13 @@ main {
     .project-text {
       padding-right: 0;
       padding-left: 20px;
+      margin: 0;
+      margin-left: 20px;
+      @include media($second-break){
+        margin: 0;
+        padding: 0;
+        margin-top: 50px;
+      }
     }
     
   }
@@ -159,6 +221,9 @@ main {
     margin: 20px 10px;
     text-align: center;
     font-size: 1.8rem;
+    @include media($fifth-break){
+      width: 100%;
+    }
   }
   p {
     font-size: 2rem;
@@ -176,20 +241,35 @@ main {
   .project-image {
     position: relative;
     width: calc(50% - 20px);
-    margin: 0 20px;
+    @include media($second-break){
+      width: 100%;
+    }
   }
   .project-text {
     padding-right: 20px;
+    margin-right: 20px;
+    @include media($second-break){
+      margin: 0;
+      padding: 0;
+      margin-top: 50px;
+    }
   }
   .project-image {
     background-color: $primary-color;
     padding: 0px 0;
+    margin-left: 10px;
+    @include media($second-break){
+      margin-left: 0;
+    }
     ul {
       display: flex;
       flex-wrap: wrap;
       position: relative;
       right: 30px;
       bottom: 35px;
+      @include media($fifth-break){
+        right: 0;
+      }
     }
     li {
       background-color: #fff;
@@ -203,6 +283,20 @@ main {
     position: relative;
     left: 20px;
     top: -70px;
+    @include media($second-break){
+      width: 60%;
+    }
+    @include media($fourth-break){
+      width: 80%;
+      left: 5%;
+      img {
+        object-fit: cover;
+      }
+    }
+    @include media($fifth-break) {
+      width: 100%;
+      left: 0;
+    }
     &::before {
       content: '';
       display: block;
@@ -219,12 +313,24 @@ main {
     }
   }
 }
-
+// .my-contacts{
+//   .wrapper{
+//     @include media($final-break){
+//       width: 100%;
+//     }
+//   }
+// }
 .contact-flex {
   width: 95%;
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  @include media($fourth-break){
+    flex-direction: column;
+  }
+  @include media($final-break){
+    width: 100%;
+  }
   ul {
     width: 50%;
     display: flex;
@@ -232,11 +338,28 @@ main {
     justify-content: flex-start;
     align-items: flex-end;
     position: relative;
-    padding-top: 25px;
+    padding-top: 60px;
+    padding-right: 150px;
+    @include media($second-break) {
+      padding-right: 50px;
+    }
+    @include media($fourth-break){
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding-right: 0;
+    }
+    @include media($final-break){
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 20px;
+    }
   }
   li {
     margin: 10px 0;
-    padding-right: 100px;
+    @include media($final-break){
+      width: calc(100% / 3);
+    }
   }
   a {
     color: $primary-black;
@@ -253,61 +376,24 @@ main {
       width: 125%;
       height: 100%;
       position: absolute;
-      top: 40%;
+      top: 30%;
       right: 2.5px;
       z-index: 1;
       border: 1px solid $primary-accent;
       transition: all 0.35s;
+      @include media($fourth-break){
+        width: 100%;
+      }
     }
     &:hover::after,
     &:focus::after {
       width: 100%;
+      @include media($fourth-break){
+        top: -25%;
+        height: 150%;
+      }
     }
   }
-  // i {
-  //   font-size: 4rem;
-  //   color: $primary-black;
-  //   position: relative;
-  //   z-index: 3;
-  //   padding: 20px;
-  // }
-  // a {
-  //   margin: 15px;
-  //   height: 80px;
-  //   width: 80px;
-  //   background-color: $secondary-accent;
-  //   color: $primary-black;
-  //   border-radius: 50%;
-  //   position: relative;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   transform: scale(1);
-  //   transition: transform 0.35s;
-  //   &:hover {
-  //     transform: scale(1.1);
-  //   }
-  //   &::after {
-  //     content: '';
-  //     display: block;
-  //     position: absolute;
-  //     bottom: -10%;
-  //     right: 10%;
-  //     width: 80%;
-  //     height: 120%;
-  //     border-radius: 50%;
-  //     transition: all 0.35s;
-  //     border: 1px solid $primary-accent;
-  //     z-index: 2;
-  //   }
-  //   &:hover::after,
-  //   &:focus::after {
-  //     bottom: 10%;
-  //     right: -10%;
-  //     width: 120%;
-  //     height: 80%;
-  //   }
-  // }
 }
 form {
   width: 50%;
@@ -319,6 +405,12 @@ form {
   background-color: $primary-color;
   color: $primary-black;
   font-size: 2rem;
+  @include media($second-break) {
+    width: 80%;
+  }
+  @include media($fourth-break){
+    width: 100%;
+  }
   h3 {
     margin: 10px 0;
   }

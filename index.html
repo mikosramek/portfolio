@@ -14,15 +14,19 @@
 </head>
 <body>
   <header id="home">
+    <div class="hidden-button-small" id="hidden-button-small"></div>
+  <svg class="hidden-button" id="hidden-button" xmlns="http://www.w3.org/2000/svg" width="60" height="30" viewBox="0 0 51 21">
+    <path fill="none" stroke="#000" stroke-width="1" d="M1.64725561,10.5 L15.89184,17.4858498 C22.2521193,20.6050673 29.7099953,20.5467884 36.0207512,17.3285543 L49.4111194,10.5 L36.0207512,3.67144571 C29.7099953,0.453211623 22.2521193,0.39493274 15.89184,3.51415019 L1.64725561,10.5 Z"/>
+  </svg>  
+    <nav>
+      <ul>
+        <li><a href="#home" class="activeNav" id="homeNav">Home</a></li>
+        <li><a href="#about" id="aboutNav">About</a></li>
+        <li><a href="#projects" id="projectsNav">Projects</a></li>
+        <li><a href="#contact" id="contactNav">Contact</a></li>
+      </ul>
+    </nav>
     <div class="wrapper">
-      <nav>
-        <ul>
-          <li><a href="#home" class="activeNav">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
       <div class="header-content">
         <div class="header-image" id="header-image">
           <span></span>
@@ -111,7 +115,6 @@
           <li>
             <div class="skill-icon">
               <i class="fas fa-fire"></i>
-              <!-- <img src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-logomark.svg" alt=""> -->
             </div>
             <p> Firebase</p>
           </li>
@@ -127,12 +130,6 @@
             </div>
             <p> Git</p>
           </li>
-          <!-- <li>
-            <div class="skill-icon">
-              <i class="fas fa-server"></i>
-            </div>
-            <p> APIs</p>
-          </li> -->
           <li>
             <div class="skill-icon">
               <i class='fas fa-gamepad'></i>
@@ -194,7 +191,8 @@
           <li class="project" id="project-three">
             <div class="project-text">
               <h3><i class="far fa-eye" aria-hidden="true"></i><span class="sub-title">(The House of Qhinos)</span></h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus reiciendis necessitatibus commodi assumenda deleniti blanditiis dolor iure sit voluptatum, quas, delectus ea, dignissimos autem molestias.</p>
+              <p>A point-and-click game that challenges the user to escape through talking to npcs and solving a puzzle.</p>
+              <p>It uses jQuery to control user state and manipulate the DOM.</p>
               <a href="https://github.com/mikosramek/theHouseOfQhinos" target="_blank" class="button">View on Github<span></span></a>
               <a href="https://mikosramek.github.io/theHouseoOfQhinos/" target="_blank" class="button">View Live<span></span></a>
             </div>
@@ -272,10 +270,7 @@
       <p>mikosramek © 2019</p>
     </div>
   </footer>
-  <div class="hidden-button-small" id="hidden-button-small"></div>
-  <svg class="hidden-button" id="hidden-button" xmlns="http://www.w3.org/2000/svg" width="60" height="30" viewBox="0 0 51 21">
-    <path fill="none" stroke="#000" stroke-width="1" d="M1.64725561,10.5 L15.89184,17.4858498 C22.2521193,20.6050673 29.7099953,20.5467884 36.0207512,17.3285543 L49.4111194,10.5 L36.0207512,3.67144571 C29.7099953,0.453211623 22.2521193,0.39493274 15.89184,3.51415019 L1.64725561,10.5 Z"/>
-  </svg>  
+  
   <!-- jQuery -->
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js'></script>
