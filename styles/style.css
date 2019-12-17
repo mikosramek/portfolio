@@ -530,28 +530,41 @@ header nav li {
 }
 
 header nav a {
-  background-color: #fff;
-  padding: 2.5px;
   color: #19323C;
   position: relative;
+  z-index: 2;
 }
 
-header nav a::after {
+header nav a::after, header nav a::before {
   content: '';
   display: block;
   position: absolute;
+  z-index: -1;
   height: 100%;
-  width: 0%;
+}
+
+header nav a::after {
+  width: 100%;
   top: 0;
-  right: -2px;
+  right: 0;
+  background-color: #fff;
+}
+
+header nav a::before {
+  width: 125%;
+  top: 30%;
+  right: -2.5px;
   border: 1px solid #EF414C;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
 }
 
-header nav a.activeNav::after {
-  right: -1px;
-  width: calc(100% + 1px);
+header nav a.activeNav::before, header nav a:focus::before, header nav a:hover::before {
+  width: calc(100% + 5px);
+}
+
+header nav a.activeNav::before {
+  border-color: #7BB6DE;
 }
 
 h1 {

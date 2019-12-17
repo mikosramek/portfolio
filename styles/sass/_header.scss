@@ -24,24 +24,37 @@ header {
       margin: 10px 0;
     }
     a {
-      background-color: #fff;
-      padding: 2.5px;
       color: $primary-black;
       position: relative;
-      &::after {
+      z-index: 2;
+      &::after,
+      &::before {
         content: '';
         display: block;
         position: absolute;
-        height:100%;
-        width: 0%;
+        z-index: -1;
+        height: 100%;
+      }
+      &::after {
+        width: 100%;
         top: 0;
-        right: -2px;
+        right: 0;
+        background-color: #fff;
+      }
+      &::before {
+        width: 125%;
+        top: 30%;
+        right: -2.5px;
         border: 1px solid $primary-accent;
         transition: all 0.35s;
       }
-      &.activeNav::after {
-        right: -1px;
-        width: calc(100% + 1px);
+      &.activeNav::before,
+      &:focus::before,
+      &:hover::before {
+        width: calc(100% + 5px);
+      }
+      &.activeNav::before {
+        border-color: $secondary-accent;
       }
     }
   }
