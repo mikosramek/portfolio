@@ -161,7 +161,9 @@ app.setupNav = () => {
 app.init = () => {
   app.bindDomElements();
   app.setUpContactForm();
-  app.setupAnimations();
+  if(window.innerWidth > 700){
+    app.setupAnimations();
+  }
   app.setupNav();
 }
 
