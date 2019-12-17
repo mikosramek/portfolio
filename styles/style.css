@@ -914,6 +914,7 @@ main h3 {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 680px) {

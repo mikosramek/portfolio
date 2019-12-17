@@ -10,6 +10,7 @@ main {
 .about-me {
   display: flex;
   position: relative;
+  overflow-x: hidden;
   @include media($fourth-break){
     flex-direction: column-reverse;
     justify-content: center;
