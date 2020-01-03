@@ -38,10 +38,10 @@ p {
 .button,
  button {
   padding: 15px 20px;
-  background-color: $secondary-accent;
+  background-color: scale-color($secondary-accent, $saturation: -50, $lightness: -40);
   border-radius: 100px;
   font-size: 2rem;
-  color: $primary-black;
+  color: #fff;
   cursor: pointer;
   transition: all 0.35s, outline 0s;
   position: relative;

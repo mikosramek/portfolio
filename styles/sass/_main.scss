@@ -16,6 +16,7 @@ main {
   }
   h3,p {
     font-size: 2.4rem;
+    line-height: 1.5;
   }
   .text-highlight {
     color: $primary-accent;
@@ -24,7 +25,11 @@ main {
 .profile-text {
   width: calc(60% - 10px);
   margin-right: 10px;
-  padding-top: 60px;
+  padding-right: 65px;
+  padding-top: 120px;
+  @include media($second-break){
+    padding-right: 20px;
+  }
   @include media($fourth-break){
     padding-top: 20px;
     width: 100%;
@@ -36,7 +41,7 @@ main {
   margin-left: 10px;
   position: relative;
   top: -50px;
-  @include media($second-break){
+  @include media($image-break){
     img {
       object-fit: cover;
       object-position: center 25%;
@@ -78,22 +83,24 @@ main {
 } 
 
 .my-skills {
-  margin: 50px 0 75px;
+  margin: 50px 0 140px;
   .skill-highlight {
     position: absolute;
-    height: 120px;
+    height: 160px;
     width: 100%;
     background-color: $secondary-accent;
   }
   h2 {
     padding: 20px;
+    position: relative;
+    top: 50px;
   }
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     position: relative;
-    top: 10px;
+    top: 50px;
     width: 100%;
   }
   li {
@@ -164,6 +171,9 @@ main {
   }
   h3 {
     margin-bottom: 30px;
+    @include media($final-break){
+      text-align: center;
+    }
   }
   &:nth-of-type(2n){
     flex-direction: row-reverse;
@@ -177,10 +187,10 @@ main {
         margin-right: 0;
       }
       ul {
-        right: -30px;
+        left: -30px;
         justify-content: flex-end;
         @include media($fifth-break){
-          right: 0;
+          left: 0;
         }
       }
       .project-image-border {
@@ -227,6 +237,7 @@ main {
   }
   p {
     font-size: 2rem;
+    line-height: 1.5;
   }
   p:last-of-type {
     margin-bottom: 35px;
@@ -263,20 +274,20 @@ main {
     }
     ul {
       display: flex;
+      flex-direction: row-reverse;
       flex-wrap: wrap;
       position: relative;
-      right: 30px;
-      bottom: 35px;
+      left: 30px;
+      top: -50px;
       @include media($fifth-break){
-        right: 0;
+        left: 0;
       }
     }
     li {
-      background-color: #fff;
-      border: 1px solid $secondary-accent;
+      color: darken($primary-color, 70);
       margin: 5px;
       padding: 5px;
-      font-size: 1.9rem;
+      font-size: 1.6rem;
     }
   }
   .project-image-border{
@@ -313,13 +324,6 @@ main {
     }
   }
 }
-// .my-contacts{
-//   .wrapper{
-//     @include media($final-break){
-//       width: 100%;
-//     }
-//   }
-// }
 .contact-flex {
   width: 95%;
   display: flex;
@@ -327,6 +331,8 @@ main {
   margin-top: 20px;
   @include media($fourth-break){
     flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   @include media($final-break){
     width: 100%;
@@ -338,15 +344,15 @@ main {
     justify-content: flex-start;
     align-items: flex-end;
     position: relative;
-    padding-top: 60px;
-    padding-right: 150px;
+    padding-top: 90px;
+    padding-right: 80px;
     @include media($second-break) {
-      padding-right: 50px;
+      padding-right: 70px;
     }
     @include media($fourth-break){
       flex-direction: row;
       justify-content: space-between;
-      width: 100%;
+      width: 80%;
       padding-right: 0;
     }
     @include media($final-break){
@@ -357,18 +363,25 @@ main {
   }
   li {
     margin: 10px 0;
+    transform: scale(1);
+    transition: transform 0.35s;
+    &:hover {
+      transform: scale(1.05);
+    }
     @include media($final-break){
       width: calc(100% / 3);
+      text-align: center;
     }
   }
   a {
     color: $primary-black;
-    font-size: 2rem;
+    font-size: 2.5rem;
     position: relative;
-    span {
+    i {
       position: relative;
       z-index: 2;
       background-color: #fff;
+      text-align: center;
     }
     &::after {
       content: '';
@@ -377,17 +390,19 @@ main {
       height: 100%;
       position: absolute;
       top: 30%;
-      right: 2.5px;
+      right: 0px;
       z-index: 1;
       border: 1px solid $primary-accent;
       transition: all 0.35s;
       @include media($fourth-break){
         width: 100%;
+        right: 12.5%;
       }
     }
     &:hover::after,
     &:focus::after {
       width: 100%;
+      right: 12.5%;
       @include media($fourth-break){
         top: -25%;
         height: 150%;
@@ -409,7 +424,7 @@ form {
     width: 80%;
   }
   @include media($fourth-break){
-    width: 100%;
+    width: 80%;
   }
   h3 {
     margin: 10px 0;

@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name='keywords' content='front-end, web development'>
+  <meta name='description' content='Miko Sramek is a front-end web developer.'>
+  <meta name='author' content='Miko Sramek'>
+
   <title>Miko Sramek - Web Developer</title>
 
   <link rel='stylesheet' href='styles/style.css'>
@@ -19,15 +23,19 @@
     <path fill="none" stroke="#000" stroke-width="1" d="M1.64725561,10.5 L15.89184,17.4858498 C22.2521193,20.6050673 29.7099953,20.5467884 36.0207512,17.3285543 L49.4111194,10.5 L36.0207512,3.67144571 C29.7099953,0.453211623 22.2521193,0.39493274 15.89184,3.51415019 L1.64725561,10.5 Z"/>
   </svg>  
     <nav>
+      <!-- Start of Anchor List -->
       <ul>
-        <li><a href="#home" class="activeNav" id="homeNav">Home</a></li>
-        <li><a href="#about" id="aboutNav">About</a></li>
-        <li><a href="#projects" id="projectsNav">Projects</a></li>
-        <li><a href="#contact" id="contactNav">Contact</a></li>
-      </ul>
+        <li><a href="#home" class="activeNav" id="homeNav">Home<span></span></a></li>
+        <li><a href="#about" id="aboutNav">About<span></span></a></li>
+        <li><a href="#projects" id="projectsNav">Projects<span></span></a></li>
+        <li><a href="#contact" id="contactNav">Contact<span></span></a></li>
+      </ul> <!-- End of Anchor List -->
     </nav>
+    <!-- Start of Wrapper -->
     <div class="wrapper">
+      <!-- Start of Header Content Div -->
       <div class="header-content">
+        <!-- Start of Header Image Div -->
         <div class="header-image" id="header-image">
           <span></span>
           <span></span>
@@ -36,7 +44,8 @@
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div> <!-- End of Header Image Div -->
+        <!-- Start of Header Text Div -->
         <div class="header-text">
           <h2>Hello,</h2>
           <h1>I'm Miko Šrámek</h1>
@@ -45,15 +54,16 @@
             Talk to me
             <span></span>
           </a>
-        </div>
-
-      </div>
-    </div>
+        </div> <!-- End of Header Text Div -->
+      </div> <!-- End of Header Content Div -->
+    </div> <!-- End of Wrapper -->
   </header>
   <main id="maincontent">
     <!-- Start of Wrapper -->
     <div class="wrapper">
+      <!-- Start of About Me Section -->
       <section class="about-me" id="about">
+        <!-- Start of Profile Text Div -->
         <div class="profile-text" id="profile-text">
           <h2>Get to know me</h2>
           <p class="text-highlight">I am a passionate front-end developer who is always seeking new experiences and has
@@ -63,18 +73,21 @@
             market-ready. I hope to bring my design and UX experience to creating websites for products and people, and
             eventually grow my skills to become a full-stack developer.
           </p>
-        </div>
+        </div> <!-- End of Profile Text Div -->
+        <!-- Start of Profile Div Div -->
         <div class="profile-photo" id="profile-photo">
           <img src="./assets/cat-skull.png" alt="" class="profile-photo-tag">
           <img src="./assets/2019-fall-Miko-Sramek.jpg" alt="Miko Sramek">
         </div>
-      </section>
+      </section> <!-- End of About Me Section -->
     </div> <!-- End of Wrapper -->
+    <!-- Start of Skill Section -->
     <section class="my-skills" id="my-skills">
       <div class="skill-highlight"></div>
       <!-- Start of Wrapper -->
       <div class="wrapper">
         <h2>My Skills</h2>
+        <!-- Start of Skill List -->
         <ul>
           <li>
             <div class="skill-icon">
@@ -136,9 +149,10 @@
             </div>
             <p>Unity & C#</p>
           </li>
-        </ul>
+        </ul> <!-- End of Skill List -->
       </div> <!-- End of Wrapper -->
-    </section>
+    </section> <!-- End of Skill Section -->
+    <!-- Start of Projects Section -->
     <section class="my-projects" id="projects">
       <!-- Start of Wrapper -->
       <div class="wrapper">
@@ -149,13 +163,15 @@
               <h3>Dear Magic</h3>
               <p>An application that allows users to add, filter, check off, and update prices of Magic: the Gathering cards within a list.</p>
               <p>Uses React to handle state and user flow, Firebase to store users' lists, and the Scryfall API to gather data on the cards.</p>
-              <a href="https://github.com/mikosramek/dear-magic" target="_blank" class="button">View on Github<span></span></a>
-              <a href="https://mikosramek.github.io/dear-magic/" target="_blank" class="button">View Live<span></span></a>
+              <a href="https://github.com/mikosramek/dear-magic" rel="noopener" target="_blank" class="button">View on Github<span></span></a>
+              <a href="https://mikosramek.github.io/dear-magic/" rel="noopener" target="_blank" class="button">View Live<span></span></a>
             </div> <!-- End of Project Text Div -->
+            <!-- Start of Project Image Div -->
             <div class="project-image">
+              <!-- Start of Project Image Container Div -->
               <div class="project-image-border">
                 <img src="./assets/dearmagic.png" alt="">
-              </div>
+              </div> <!-- End of Project Image Container Div -->
               <!-- Start of Tech Used List -->
               <ul>
                 <li>React</li>
@@ -172,13 +188,15 @@
               <h3>The Restaurant Mall</h3>
               <p>A fully responsive multi-page PSD conversion.</p>
               <p>Uses both flexbox and grid to layout site elements.</p>
-              <a href="https://github.com/mikosramek/the-restaurant-mall" target="_blank" class="button">View on Github<span></span></a>
-              <a href="https://mikosramek.github.io/the-restaurant-mall/" target="_blank" class="button">View Live<span></span></a>
-            </div>
+              <a href="https://github.com/mikosramek/the-restaurant-mall" rel="noopener" target="_blank" class="button">View on Github<span></span></a>
+              <a href="https://mikosramek.github.io/the-restaurant-mall/" rel="noopener" target="_blank" class="button">View Live<span></span></a>
+            </div> <!-- End of Project Text Div -->
+            <!-- Start of Project Image Div -->
             <div class="project-image">
+              <!-- Start of Project Image Container Div -->
               <div class="project-image-border">
                 <img src="./assets/restaurant.png" alt="">
-              </div>
+              </div> <!-- End of Project Image Container Div -->
               <!-- Start of Tech Used List -->
               <ul>
                 <li>HTML5</li>
@@ -186,20 +204,22 @@
                 <li>Responsive</li>
                 <li>Multi-page</li>
               </ul> <!-- End of Tech Used List -->
-            </div>
+            </div><!-- End of Project Image Div -->
           </li>
           <li class="project" id="project-three">
             <div class="project-text">
               <h3><i class="far fa-eye" aria-hidden="true"></i><span class="sub-title">(The House of Qhinos)</span></h3>
               <p>A point-and-click game that challenges the user to escape through talking to npcs and solving a puzzle.</p>
-              <p>It uses jQuery to control user state and manipulate the DOM.</p>
-              <a href="https://github.com/mikosramek/theHouseOfQhinos" target="_blank" class="button">View on Github<span></span></a>
-              <a href="https://mikosramek.github.io/theHouseoOfQhinos/" target="_blank" class="button">View Live<span></span></a>
-            </div>
+              <p>Uses jQuery to control user state and manipulate the DOM.</p>
+              <a href="https://github.com/mikosramek/theHouseOfQhinos" rel="noopener" target="_blank" class="button">View on Github<span></span></a>
+              <a href="https://mikosramek.github.io/theHouseoOfQhinos/" rel="noopener" target="_blank" class="button">View Live<span></span></a>
+            </div> <!-- End of Project Text Div -->
+            <!-- Start of Project Image Div -->
             <div class="project-image">
+              <!-- Start of Project Image Container Div -->
               <div class="project-image-border">
               	<img src="./assets/eye.png" alt="">
-              </div>
+              </div> <!-- End of Project Image Container Div -->
               <!-- Start of Tech Used List -->
               <ul>
                 <li>HTML5</li>
@@ -208,11 +228,11 @@
                 <li>CSS3</li>
                 <li>Sass</li>
               </ul> <!-- End of Tech Used List -->
-            </div>
+            </div> <!-- End of Project Image Div -->
           </li>
         </ul> <!-- End of Project List -->
       </div> <!-- End of Wrapper -->
-    </section>
+    </section> <!-- End of Projects Section -->
     <section class="my-contacts" id="contact">
       <!-- Start of Wrapper -->
       <div class="wrapper">
@@ -220,28 +240,28 @@
         <div class="contact-flex">
           <ul>
             <li>
-              <a href="mailto:miko@mikosramek.ca" target="_blank" aria-label="Open native email application to send me an email.">
-                <span>Email</span>
+              <a href="mailto:miko@mikosramek.ca" rel="noopener" target="_blank" aria-label="Open native email application to send me an email.">
+                <i class='fas fa-envelope-open-text aria-hidden="true"'></i>
               </a>
             </li>
             <li>
-              <a href="http://twitter.com/mikosramek" target="_blank" aria-label="Open my Twitter feed in a new tab.">
-                <span>Twitter</span>
+              <a href="http://twitter.com/mikosramek" rel="noopener" target="_blank" aria-label="Open my Twitter feed in a new tab.">
+                <i class='fab fa-twitter' aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="https://github.com/mikosramek" target="_blank" aria-label="Open my Github profile in a new tab.">
-                <span>Github</span>
+              <a href="https://github.com/mikosramek" rel="noopener" target="_blank" aria-label="Open my Github profile in a new tab.">
+                <i class="fab fa-github" aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/miko-sramek" target="_blank" aria-label="Open my linkedin profile in a new tab.">
-                <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/miko-sramek" rel="noopener" target="_blank" aria-label="Open my linkedin profile in a new tab.">
+                <i class='fab fa-linkedin' aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="https://mikosramek.itch.io/" target="_blank" aria-label="Open my Itch.io profile in a new tab.">
-                <span>Itch.io</span>
+              <a href="https://mikosramek.itch.io/" rel="noopener" target="_blank" aria-label="Open my Itch.io profile in a new tab.">
+                <i class='fab fa-itch-io' aria-hidden="true"></i>
               </a>
             </li>
           </ul> <!-- End of Contact List -->

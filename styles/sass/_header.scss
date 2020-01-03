@@ -2,60 +2,78 @@ header {
   background-image: linear-gradient(to right, $secondary-accent 20%, $primary-color 20%);
   min-height: 95vh;
   position: relative;
-  nav {
-    position: fixed;
-    top: 20%;
-    right: 10px;
-    z-index: 20;
-    @include media($third-break){
-      top: 10%;
-    }
-    @include media($fourth-break){
-      top: 5%;
-    }
-    ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-size: 2rem;
-    }
-    li {
-      text-align: right;
-      margin: 10px 0;
-    }
-    a {
-      color: $primary-black;
-      position: relative;
-      z-index: 2;
+}
+nav {
+  position: fixed;
+  top: 27%;
+  right: 40px;
+  z-index: 20;
+  @include media($third-break){
+    top: 10%;
+  }
+  @include media($fourth-break){
+    top: 5%;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2rem;
+  }
+  li {
+    text-align: right;
+    margin: 10px 0;
+  }
+  a {
+    color: $primary-black;
+    position: relative;
+    z-index: 2;
+  }
+  .activeNav,
+  a:hover,
+  a:focus {
+    span {
+      border-color: $secondary-accent;
       &::after,
       &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -1;
-        height: 100%;
-      }
-      &::after {
-        width: 100%;
-        top: 0;
-        right: 0;
-        background-color: #fff;
-      }
-      &::before {
-        width: 125%;
-        top: 30%;
-        right: -2.5px;
-        border: 1px solid $primary-accent;
-        transition: all 0.35s;
-      }
-      &.activeNav::before,
-      &:focus::before,
-      &:hover::before {
-        width: calc(100% + 5px);
-      }
-      &.activeNav::before {
         border-color: $secondary-accent;
       }
+      &::before {
+        $padding: 5px;
+        width: $padding;
+        left: #{-$padding};
+      }
+    }
+  }
+  span {
+    position: absolute;
+    display: block;
+    border-bottom: 1px solid $primary-accent;
+    width: calc(110% - 2px);
+    height: 20px;
+    right: -1.5px;
+    top: 30%;
+    transition: all 0.35s;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 5px;
+      bottom: -1px;
+      border: 1px solid $primary-accent;
+      transition: all 0.35s;
+    }
+    &::before {
+      $padding: 10px;
+      width: $padding;
+      left: #{-$padding};
+      border-right: none;
+    }
+    &::after {
+      right: -5px;
+      border-left: none;
     }
   }
 }
