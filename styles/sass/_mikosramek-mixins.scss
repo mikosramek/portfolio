@@ -68,15 +68,7 @@
 			$animName: 'wiggle'+$step;
 			&:nth-child(#{$step}){
 					height:#{$height}px;
-					animation: $animName 1s #{($step / $steps) * 0.5}s infinite alternate ease-in-out;
-			}
-			@keyframes #{$animName} {
-				0% {
-					height: #{$height}px;
-				}
-				100% {
-					height: #{$height * 1.1}px;
-				}
-			}
-	}   
+					animation-delay: #{($step / $steps) * 0.5}s;
+			}	
+	}  
 }

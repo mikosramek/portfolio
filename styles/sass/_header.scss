@@ -113,7 +113,7 @@ h1 {
     width: 15px;
     height: 60px;
     margin: 10px 5px;
-    display: block;
+    animation: spanner-anim 1s infinite alternate ease-in-out;
     @include spanner(7, 3, 150);
   }
 }

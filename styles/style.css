@@ -346,6 +346,28 @@ red: #F0575A
   }
 }
 
+@-webkit-keyframes spanner-anim {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  100% {
+    -webkit-transform: scaleY(1.1);
+            transform: scaleY(1.1);
+  }
+}
+
+@keyframes spanner-anim {
+  0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  100% {
+    -webkit-transform: scaleY(1.1);
+            transform: scaleY(1.1);
+  }
+}
+
 /* Type Styles - type.scss */
 * {
   font-family: sans-serif;
@@ -658,175 +680,50 @@ h1 {
   width: 15px;
   height: 60px;
   margin: 10px 5px;
-  display: block;
+  -webkit-animation: spanner-anim 1s infinite alternate ease-in-out;
+          animation: spanner-anim 1s infinite alternate ease-in-out;
 }
 
 .header-image span:nth-child(1) {
   height: 50px;
-  -webkit-animation: "wiggle1" 1s 0.07143s infinite alternate ease-in-out;
-          animation: "wiggle1" 1s 0.07143s infinite alternate ease-in-out;
-}
-
-@-webkit-keyframes wiggle1 {
-  0% {
-    height: 50px;
-  }
-  100% {
-    height: 55px;
-  }
-}
-
-@keyframes wiggle1 {
-  0% {
-    height: 50px;
-  }
-  100% {
-    height: 55px;
-  }
+  -webkit-animation-delay: 0.07143s;
+          animation-delay: 0.07143s;
 }
 
 .header-image span:nth-child(2) {
   height: 100px;
-  -webkit-animation: "wiggle2" 1s 0.14286s infinite alternate ease-in-out;
-          animation: "wiggle2" 1s 0.14286s infinite alternate ease-in-out;
-}
-
-@-webkit-keyframes wiggle2 {
-  0% {
-    height: 100px;
-  }
-  100% {
-    height: 110px;
-  }
-}
-
-@keyframes wiggle2 {
-  0% {
-    height: 100px;
-  }
-  100% {
-    height: 110px;
-  }
+  -webkit-animation-delay: 0.14286s;
+          animation-delay: 0.14286s;
 }
 
 .header-image span:nth-child(3) {
   height: 150px;
-  -webkit-animation: "wiggle3" 1s 0.21429s infinite alternate ease-in-out;
-          animation: "wiggle3" 1s 0.21429s infinite alternate ease-in-out;
-}
-
-@-webkit-keyframes wiggle3 {
-  0% {
-    height: 150px;
-  }
-  100% {
-    height: 165px;
-  }
-}
-
-@keyframes wiggle3 {
-  0% {
-    height: 150px;
-  }
-  100% {
-    height: 165px;
-  }
+  -webkit-animation-delay: 0.21429s;
+          animation-delay: 0.21429s;
 }
 
 .header-image span:nth-child(4) {
   height: 128.57143px;
-  -webkit-animation: "wiggle4" 1s 0.28571s infinite alternate ease-in-out;
-          animation: "wiggle4" 1s 0.28571s infinite alternate ease-in-out;
-}
-
-@-webkit-keyframes wiggle4 {
-  0% {
-    height: 128.57143px;
-  }
-  100% {
-    height: 141.42857px;
-  }
-}
-
-@keyframes wiggle4 {
-  0% {
-    height: 128.57143px;
-  }
-  100% {
-    height: 141.42857px;
-  }
+  -webkit-animation-delay: 0.28571s;
+          animation-delay: 0.28571s;
 }
 
 .header-image span:nth-child(5) {
   height: 107.14286px;
-  -webkit-animation: "wiggle5" 1s 0.35714s infinite alternate ease-in-out;
-          animation: "wiggle5" 1s 0.35714s infinite alternate ease-in-out;
-}
-
-@-webkit-keyframes wiggle5 {
-  0% {
-    height: 107.14286px;
-  }
-  100% {
-    height: 117.85714px;
-  }
-}
-
-@keyframes wiggle5 {
-  0% {
-    height: 107.14286px;
-  }
-  100% {
-    height: 117.85714px;
-  }
+  -webkit-animation-delay: 0.35714s;
+          animation-delay: 0.35714s;
 }
 
 .header-image span:nth-child(6) {
   height: 85.71429px;
-  -webkit-animation: "wiggle6" 1s 0.42857s infinite alternate ease-in-out;
-          animation: "wiggle6" 1s 0.42857s infinite alternate ease-in-out;
-}
-
-@-webkit-keyframes wiggle6 {
-  0% {
-    height: 85.71429px;
-  }
-  100% {
-    height: 94.28571px;
-  }
-}
-
-@keyframes wiggle6 {
-  0% {
-    height: 85.71429px;
-  }
-  100% {
-    height: 94.28571px;
-  }
+  -webkit-animation-delay: 0.42857s;
+          animation-delay: 0.42857s;
 }
 
 .header-image span:nth-child(7) {
   height: 64.28571px;
-  -webkit-animation: "wiggle7" 1s 0.5s infinite alternate ease-in-out;
-          animation: "wiggle7" 1s 0.5s infinite alternate ease-in-out;
-}
-
-@-webkit-keyframes wiggle7 {
-  0% {
-    height: 64.28571px;
-  }
-  100% {
-    height: 70.71429px;
-  }
-}
-
-@keyframes wiggle7 {
-  0% {
-    height: 64.28571px;
-  }
-  100% {
-    height: 70.71429px;
-  }
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .header-image.animate {
